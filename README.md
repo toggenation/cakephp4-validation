@@ -1,5 +1,11 @@
-# 
+# CakePHP 4 Validation & Application Rules
 
+## References
+[https://book.cakephp.org/4/en/orm/validation.html](https://book.cakephp.org/4/en/orm/validation.html)
+[https://book.cakephp.org/4/en/core-libraries/validation.html](https://book.cakephp.org/4/en/core-libraries/validation.html)
+
+
+## Youtube Video Timings
 00:00 Intro create project
 01:30 Add Posts migration
 02:19 Install sqlitebrowser and open default.sqlite database file
@@ -25,4 +31,3 @@
 40:00 Using `Text::toList`
 41:00 Handle a Cake command exception
 44:00 Create custom validation Set and use it for validation
-
