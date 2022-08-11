@@ -87,7 +87,9 @@ class PostsTable extends Table
             ->notEmptyString('title')
             ->add('title', 'unique', [
                 'rule' => function($value, $context) {
-                    $isDuplicate = $this->find()->where(['title LIKE' => $value])->count() > 0;
+                    $table = $context['providers']['table'];
+                    
+                    $isDuplicate = $table->find()->where(['title LIKE' => $value])->count() > 0;
 
                     if($isDuplicate) {
                         return "Title \"${value}\" is already in use - Command Validation";
