@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Model\Table;
 
 use App\Model\Rule\TitleIsUnique;
-use Cake\ORM\Query;
+use App\Model\Validation\Validator as ValidationValidator;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;

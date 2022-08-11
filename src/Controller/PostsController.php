@@ -51,7 +51,7 @@ class PostsController extends AppController
             $post = $this->Posts->patchEntity(
                 $post, 
                 $this->request->getData(),
-                // ['validate' => false ]
+                 ['validate' => false ]
             );
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));

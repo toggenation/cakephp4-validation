@@ -6,11 +6,11 @@ use Cake\Datasource\EntityInterface;
 
 class TitleIsUnique
 {
+    // public function __construct($rules)
+    // {
+    //     $this->rules = $rules;
+    // }
 
-    public function __construct($rules)
-    {
-        $this->rules = $rules;
-    }
     public function __invoke(EntityInterface $entity, array $options)
     {
         $title = $entity->title;

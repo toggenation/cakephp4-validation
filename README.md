@@ -1,53 +1,28 @@
-# CakePHP Application Skeleton
+# 
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+00:00 Intro create project
+01:30 Add Posts migration
+02:19 Install sqlitebrowser and open default.sqlite database file
+03:43 Run `bin/cake bake all Posts`
+04:40 Run `bin/cake server`
+05:00 View posts index page at http://localhost:8765/posts
+05:35 Attempt to add duplicate title
+05:57 validationDefault rules
+06:59 buildRules Application Rules
+08:04 Disable validator rules and change message 
+09:57 Begin dymamic validation message creation
+10:00 Create a function for an application rule
+15:00 Add a function to a validation rule
+16:40 Running a SQL query in a validation function to check for duplicates
+20:28 Moving a RulesChecker rule into a class
+21:41 Create a Custom Rule Object
+31:00 Create a cake console command using `bin/cake bake command AddPost`
+33:00 Create an AddPost utility / service class
+34:34 Use `LocatorAwareTrait` to provide access to table from AddPost service class
+38:00 Adding a record using the `bin/cake add_posts "Title" "Body"` command
+38:44 Formatting Validation errors for display by command
+39:00 Using `Hash::flatten`
+40:00 Using `Text::toList`
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
+44:00 Create custom validation Set and use it for validation
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
-
-## Installation
-
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-
-```bash
-composer create-project --prefer-dist cakephp/app
-```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
-```
-
-Then visit `http://localhost:8765` to see the welcome page.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit the environment specific `config/app_local.php` and setup the 
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
-
-## Layout
-
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
