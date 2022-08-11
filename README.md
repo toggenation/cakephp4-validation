@@ -23,6 +23,6 @@
 38:44 Formatting Validation errors for display by command
 39:00 Using `Hash::flatten`
 40:00 Using `Text::toList`
-
+41:00 Handle a Cake command exception
 44:00 Create custom validation Set and use it for validation
 
