@@ -8,10 +8,10 @@ For example instead of a generic message such as:
 
 then a custom version might be:
 ```
-You cannot save this record this is already a post with title \"${title}\" in the ${table} table
+There is already a post with title \"${title}\" in the ${table} table
 ```
 Which would render as:
-> You cannot save this record this is already a post with title "Test" in the Posts table
+> There is already a post with title "Test" in the Posts table
 
 ## References
 * [https://book.cakephp.org/4/en/orm/validation.html](https://book.cakephp.org/4/en/orm/validation.html)
