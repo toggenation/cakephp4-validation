@@ -19,8 +19,7 @@ declare(strict_types=1);
 namespace App;
 
 use App\Command\AddPostCommand;
-use App\Service\AddingPost;
-use App\Service\CreatePost;
+use App\Services\CreatePost;
 use App\Utils\AddPost;
 use Cake\Core\Configure;
 use Cake\Core\ContainerInterface;
@@ -121,11 +120,11 @@ class Application extends BaseApplication
      */
     public function services(ContainerInterface $container): void
     {
-        $container->add(AddPost::class);
-
-        // command
-        $container->add(AddPostCommand::class)
+        $container
+            ->add(AddPostCommand::class)
             ->addArgument(AddPost::class);
+
+        $container->add(AddPost::class);
 
         $container->add(CreatePost::class);
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Service\CreatePost;
+use App\Services\CreatePost;
 
 /**
  * Posts Controller
@@ -47,9 +47,9 @@ class PostsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add(CreatePost $post, $id = null)
+    public function add(CreatePost $add, $id = null)
     {
-        $post->add($this);
+         $add->add($this, $id);
     }
 
     /**
