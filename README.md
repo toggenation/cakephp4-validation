@@ -13,6 +13,40 @@ There is already a post with title \"${title}\" in the ${table} table
 Which would render as:
 > There is already a post with title "Test" in the Posts table
 
+## Get Started
+
+Clone the repo [https://github.com/toggenation/cakephp4-validation](https://github.com/toggenation/cakephp4-validation)
+
+```
+git clone https://github.com/toggenation/cakephp4-validation.git
+```
+Install deps
+
+```
+composer install
+```
+
+Configure DB (This is for sqlite)
+
+```php
+// config/app_local.php
+'Datasources' => [
+        'default' => [
+            'host' => 'localhost',
+            'username' => 'my_app',
+            'password' => 'secret',
+            'database' => 'my_app',
+            'url' => env('DATABASE_TEST_URL', 'sqlite://127.0.0.1/default.sqlite'),
+        ],
+```
+
+Run Migrations
+```
+bin/cake migrations migrate
+```
+
+
+
 ## References
 * [https://book.cakephp.org/4/en/orm/validation.html](https://book.cakephp.org/4/en/orm/validation.html)
 * [https://book.cakephp.org/4/en/core-libraries/validation.html](https://book.cakephp.org/4/en/core-libraries/validation.html)

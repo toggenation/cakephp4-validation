@@ -1,7 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
+
+use App\Service\CreatePost;
 
 /**
  * Posts Controller
@@ -44,23 +47,9 @@ class PostsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add(CreatePost $post, $id = null)
     {
-        $post = $this->Posts->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $post = $this->Posts->patchEntity(
-                $post, 
-                $this->request->getData(),
-                 ['validate' => false ]
-            );
-            if ($this->Posts->save($post)) {
-                $this->Flash->success(__('The post has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The post could not be saved. Please, try again.'));
-        }
-        $this->set(compact('post'));
+        $post->add($this);
     }
 
     /**
