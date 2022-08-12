@@ -47,9 +47,9 @@ class PostsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add(CreatePost $add, $id = null)
+    public function add(CreatePost $createPost, $type = null)
     {
-         $add->add($this, $id);
+       $createPost->add($this, $type);
     }
 
     /**
