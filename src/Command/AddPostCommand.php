@@ -14,6 +14,14 @@ use Cake\Console\ConsoleOptionParser;
  */
 class AddPostCommand extends Command
 {
+    private AddPost $add;
+
+    public function __construct(AddPost $add) {
+        parent::__construct();
+
+        $this->add = $add;
+    }
+
     /**
      * Hook method for defining this command's option parser.
      *
@@ -41,13 +49,11 @@ class AddPostCommand extends Command
      */
     public function execute(Arguments $args, ConsoleIo $io)
     {
-        $addPost = new AddPost();
-
         $title = $args->getArgument('title');
         $body = $args->getArgument('body');
 
         try {
-            $post = $addPost->create($title, $body);
+            $post = $this->add->create($title, $body);
             $io->out('Successfully added the "'  . $post->title . '" post');
         } catch (\Throwable $th) {
             $io->out("Create failed: " . $th->getMessage());

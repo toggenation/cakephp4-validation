@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,8 +15,12 @@ declare(strict_types=1);
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
+use App\Command\AddPostCommand;
+use App\Services\CreatePost;
+use App\Utils\AddPost;
 use Cake\Core\Configure;
 use Cake\Core\ContainerInterface;
 use Cake\Datasource\FactoryLocator;
@@ -115,6 +120,13 @@ class Application extends BaseApplication
      */
     public function services(ContainerInterface $container): void
     {
+        $container
+            ->add(AddPostCommand::class)
+            ->addArgument(AddPost::class);
+
+        $container->add(AddPost::class);
+
+        $container->add(CreatePost::class);
     }
 
     /**
