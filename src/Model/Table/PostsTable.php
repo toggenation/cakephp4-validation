@@ -88,7 +88,9 @@ class PostsTable extends Table
             ->add('title', 'unique', [
                 'rule' => function($value, $context) {
                     $table = $context['providers']['table'];
-                    
+
+                    // better to use the table class passed in via $context 
+                    // than using $this->find() from outside the method
                     $isDuplicate = $table->find()->where(['title LIKE' => $value])->count() > 0;
 
                     if($isDuplicate) {
