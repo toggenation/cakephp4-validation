@@ -18,6 +18,9 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Command\AddPostCommand;
+use App\Services\CreatePost;
+use App\Utils\AddPost;
 use Cake\Core\Configure;
 use Cake\Core\ContainerInterface;
 use Cake\Datasource\FactoryLocator;

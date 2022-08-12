@@ -6,10 +6,11 @@ use App\Controller\PostsController;
 
 class CreatePost {
 
-    public function add(PostsController $controller, $id = null) {
+    public function add(PostsController $controller, $type = null) {
         $request = $controller->getRequest();
         
         $post =  $controller->Posts->newEmptyEntity();
+
         if ( $request->is('post')) {
             $post =  $controller->Posts->patchEntity(
                 $post, 
