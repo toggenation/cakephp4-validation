@@ -1,15 +1,23 @@
 # CakePHP 4 Validation & Application Rules
 
-This repo has some examples of creating custom validation messages for both array validation (POST request or before creating entities) and entity validation (Application RulesChecker validation after entity creation)
+## Features
 
-For example instead of a generic message such as:
+- Dependency Injection
+- Defer all controller action logic to a Service class
+- Custom validation messages for both array validation (POST request or before creating entities) and entity validation (Application RulesChecker validation after entity creation)
+
+### Custom Validation Messages
+
+Instead of a generic message such as:
 
 > The record must be unique
 
 then a custom version might be:
+
 ```
 There is already a post with title \"${title}\" in the ${table} table
 ```
+
 Which would render as:
 > There is already a post with title "Test" in the Posts table
 
